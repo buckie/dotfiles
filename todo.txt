@@ -1,7 +1,14 @@
 (B) avoid useless duplicated re-addind of scm breeze on each run
 configure i3 window manager
+evaluate @prezto submodule: History Substring Search
+evaluate @prezto submodule: Pacman
+evaluate @prezto submodule: Set syntax highlighters.
+evaluate @prezto submodule: Tmux
+evaluate @prezto submodule: environment
+evaluate @prezto submodule: history
+evaluate @prezto submodule: terminal
 highlight code in .md files @vimrc
-look into antigen/prezto as oh-my-zsh sub
-oh-my-zsh=>prezto
 source highlight when `less`ing
+x look into antigen/prezto as oh-my-zsh sub
+x oh-my-zsh=>prezto
 youcompleteme @vimrc
