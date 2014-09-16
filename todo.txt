@@ -12,3 +12,6 @@ source highlight when `less`ing
 x look into antigen/prezto as oh-my-zsh sub
 x oh-my-zsh=>prezto
 youcompleteme @vimrc
+(A) find a theme that doesn't suck
+(A) super slow in git repos
+(A) fasd that just jumps into dirs (w/o) prompting
