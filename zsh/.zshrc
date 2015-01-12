@@ -9,7 +9,8 @@ export ZSH_THEME="robbyrussell"
 
 export COMPLETION_WAITING_DOTS="true"
 
-export EDITOR='vim'
+export EDITOR='nvim'
+alias vim='$EDITOR'
 alias v='$EDITOR'
 
 # RC/Config files ###########################

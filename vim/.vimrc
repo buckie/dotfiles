@@ -56,6 +56,7 @@ let g:neocomplete#max_list = 15
 " <TAB>: completion
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 set completeopt-=preview          " don't open preview window all over the place
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 " GHCMOD: haskell type info and error checking
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync " check and lint on write

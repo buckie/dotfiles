@@ -18,7 +18,7 @@ Plug 'scrooloose/nerdtree'            " NerdTree: file browser
 Plug 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes and vim splits
 
 Plug 'scrooloose/syntastic'           " automatic syntax checking / linting
-Plug 'Shougo/neocomplete.vim'         " autocompletion
+Plug 'Valloric/YouCompleteMe'         , { 'do': './install.sh' }" autocompletion
 
 " UTILS:
 Plug 'Shougo/vimproc.vim'       , { 'for': 'haskell', 'do': 'make' }        " Interactive command execution (dep for ghc-mod..)

@@ -20,6 +20,10 @@ curl -fLo ~/.vim/autoload/plug.vim \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim -u "$HOME/.vimrc.plugs" +PlugInstall +qall!
 
+echo "==> install neovim stuff"
+pip install neovim
+ln -s ~/.vim ~/.nvim
+
 echo "==> install emacs plugins"
 cd ~/.emacs.d/
 cask install
