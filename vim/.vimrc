@@ -19,6 +19,8 @@ highlight clear SignColumn       " signColumn(gutter) should match background
 highlight clear LineNr           " current line number row will have same background color in relative mode
 set cursorline                   " highlight current line
 set showmatch                    " show matching brackets/parenthesis
+set history=1000
+
 
 " Highlight problematic whitespace
 set list

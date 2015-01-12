@@ -39,28 +39,18 @@ bindkey '^R' history-incremental-search-backward
 #### THE PATH ###############################
 export PATH=/usr/local/bin:$PATH
 
-# golang stuff
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
-
 # add cabal (haskell) bins
 export PATH=$HOME/.cabal/bin:$PATH
-
-# add rbenv shims to path
-export PATH=$HOME/.rbenv/shims:$PATH
 
 # add useful user scripts
 export PATH=$HOME/code/scripts:$PATH
 
-# add cask (emacs package manager)
-export PATH=$HOME/.cask/bin/:$PATH
+# add anaconda path
+export PATH=`find $HOME -iregex '.*conda/bin/conda' -maxdepth 3`:$PATH
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 #############################################
-
-# initialize scm breeze
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 # hack for getting more colours while on gnome-terminal
 if [[ "$COLORTERM" == "gnome-terminal" ]]; then

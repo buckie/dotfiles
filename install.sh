@@ -4,14 +4,10 @@ set -euo pipefail
 IFS=$'\n\t'
 
 echo "==> copy dotfiles"
-stow --restow --target="$HOME" vim zsh tmux haskell lein
+stow --restow --target="$HOME" vim zsh tmux haskell
 
 echo "==> install oh-my-zsh"
 git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh" || true
-
-echo "==> install scm_breeze"
-git clone https://github.com/ndbroadbent/scm_breeze.git "$HOME/.scm_breeze" || true
-"$HOME/.scm_breeze/install.sh"
 
 echo "==> install vim-plug and plugins"
 rm -rf ~/.vim/plugged/
