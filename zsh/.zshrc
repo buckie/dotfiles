@@ -48,6 +48,8 @@ export PATH=$HOME/code/scripts:$PATH
 # add anaconda path
 export PATH=`find $HOME -iregex '.*conda/bin/conda' -maxdepth 3`:$PATH
 
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 #############################################
