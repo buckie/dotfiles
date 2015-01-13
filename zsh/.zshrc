@@ -19,6 +19,22 @@ alias vimrc='$EDITOR $HOME/.vimrc'
 alias vplugs='$EDITOR $HOME/.vimrc.plugs'
 #############################################
 
+# Platform Specific Stuff ###################
+
+if [[ `uname` != 'Darwin' ]]; then
+  alias pbcopy="xclip -selection clipboard"
+  alias pbpaste="xclip -selection clipboard -o"
+fi
+#############################################
+
+# Userful Aliases ###########################
+alias histgrep="history | grep"
+alias condaenvs="ll ~/anaconda/envs"
+alias workon="source activate"
+alias workoff="source deactivate"
+alias qrepl="rlwrap ~/q/m32/q"
+#############################################
+
 # ORG stuff #################################
 export ORGPATH="$HOME/org"
 alias org='cd $ORGPATH && vim .'
