@@ -46,7 +46,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/code/scripts:$PATH
 
 # add anaconda path
-export PATH=`find $HOME -iregex '.*conda/bin/conda' -maxdepth 3`:$PATH
+export PATH=`find $HOME -iregex '.*conda/bin' -maxdepth 3`:$PATH
 
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
