@@ -33,6 +33,9 @@ alias condaenvs="ll ~/anaconda/envs"
 alias workon="source activate"
 alias workoff="source deactivate"
 alias qrepl="rlwrap ~/q/m32/q"
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
 #############################################
 
 # ORG stuff #################################
