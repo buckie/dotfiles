@@ -67,4 +67,36 @@ map <C-n> :NERDTreeToggle<CR>
 
 " AIRLINE: status bar
 set laststatus=2                  " don't wait for a split to appear for airline to be visible
-let g:airline_powerline_fonts=1   " use cool symbols
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+"set guifont=Liberation\ Mono\ for\ Powerline\ 10
+"let g:Powerline_symbols = 'fancy'
+"let g:airline_powerline_fonts=1   " use cool symbols
+
+" vim-sensible enables smarttab. Here, we configure the rest:
+" Set the display size of t characters
+set tabstop=2
+" When hitting , insert combination of t and spaces for this width.
+" This combination is deleted as if it were 1 t when using backspace.
+set softtabstop=2
+" Set code-shifting width. Since smarttab is enabled, this is also the tab
+" insert size for the beginning of a line.
+set shiftwidth=2
+" When inserting tab characters, use spaces instead
+set expandtab
