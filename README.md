@@ -15,7 +15,6 @@ stow -t ~ gnome
 - GNU `stow`
 - `ghc-mod`, `hlint` (for hs development in vim)
   - `cabal install ghc-mod hlint`
-- `cask` (emacs plugin manager)
 
 ### Nice to have
 - `zsh`

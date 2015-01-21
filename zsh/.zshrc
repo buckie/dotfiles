@@ -16,7 +16,6 @@ alias v='$EDITOR'
 alias zshrc='$EDITOR $HOME/.zshrc'
 alias tmuxconf='$EDITOR $HOME/.tmux.conf'
 alias vimrc='$EDITOR $HOME/.vimrc'
-alias vplugs='$EDITOR $HOME/.vimrc.plugs'
 #############################################
 
 # Platform Specific Stuff ###################
@@ -44,15 +43,6 @@ alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packag
 alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 #############################################
 
-# ORG stuff #################################
-export ORGPATH="$HOME/org"
-alias org='cd $ORGPATH && vim .'
-
-export TODO_TXT_PATH="$ORGPATH/todo/todo.txt"
-export DONE_TXT_PATH="$ORGPATH/todo/done.txt"
-alias te='$EDITOR $TODO_TXT_PATH'
-#############################################
-
 # plugins can be found in ~/.oh-my-zsh/plugins/
 plugins=(autojump pacman rbenv lein vi-mode colored-man)
 
@@ -73,7 +63,7 @@ export PATH=$HOME/code/scripts:$PATH
 # add anaconda path
 export PATH=`find $HOME -iregex '.*conda/bin' -maxdepth 3`:$PATH
 
-[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+#[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
