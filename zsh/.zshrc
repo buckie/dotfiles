@@ -25,7 +25,7 @@ if [[ `uname` != 'Darwin' ]]; then
   alias pbpaste="xclip -selection clipboard -o"
 else
   # for ubuntu ghc installs
-  export PATH="/opt/local/bin"
+  export PATH="/opt/local/bin:$PATH"
 fi
 #############################################
 
