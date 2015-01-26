@@ -23,7 +23,7 @@ alias vimrc='$EDITOR $HOME/.vimrc'
 if [[ `uname` != 'Darwin' ]]; then
   alias pbcopy="xclip -selection clipboard"
   alias pbpaste="xclip -selection clipboard -o"
-else
+
   # for ubuntu ghc installs
   export PATH="/opt/local/bin:$PATH"
 fi
