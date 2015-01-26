@@ -23,6 +23,9 @@ alias vimrc='$EDITOR $HOME/.vimrc'
 if [[ `uname` != 'Darwin' ]]; then
   alias pbcopy="xclip -selection clipboard"
   alias pbpaste="xclip -selection clipboard -o"
+else
+  # for ubuntu ghc installs
+  export PATH="/opt/local/bin"
 fi
 #############################################
 
@@ -62,6 +65,9 @@ export PATH=$HOME/code/scripts:$PATH
 
 # add anaconda path
 export PATH="`find $HOME -maxdepth 3 -iregex '.*conda/bin'`:$PATH"
+
+# add cabal-sandbox path
+export PATH="$HOME/.cabal-sandbox/bin:$PATH"
 
 #[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
