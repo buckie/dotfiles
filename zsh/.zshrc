@@ -17,21 +17,33 @@ alias zshrc='$EDITOR $HOME/.zshrc'
 alias tmuxconf='$EDITOR $HOME/.tmux.conf'
 alias vimrc='$EDITOR $HOME/.vimrc'
 #############################################
-
+#
 # Platform Specific Stuff ###################
 
-if [[ `uname` != 'Darwin' ]]; then
+if [[ `uname` == 'Darwin' ]]; then
+  # For OSX
+
+fi
+
+if [[ `uname` == 'Linux' ]]; then
+  # For all *Nix
   alias pbcopy="xclip -selection clipboard"
   alias pbpaste="xclip -selection clipboard -o"
 
-  # for ubuntu ghc installs
-  export PATH="/opt/local/bin:$PATH"
+  if [[ -f "/etc/redhat-release" ]]; then
+    # for CentOS & RHEL
+    export PATH="$HOME/vim-prefix/bin:$PATH"
+    source "$HOME/setup_proxy.sh"
+  else
+    # for ubuntu ghc installs
+    export PATH="/opt/local/bin:$PATH"
+  fi
 fi
 #############################################
 
 # Userful Aliases ###########################
 alias histgrep="history | grep"
-alias condaenvs="ll ~/anaconda/envs"
+alias condaenvs="ll `find $HOME -maxdepth 3 -iregex '.*conda/envs'`"
 alias workon="source activate"
 alias workoff="source deactivate"
 alias qrepl="rlwrap ~/q/m32/q"
