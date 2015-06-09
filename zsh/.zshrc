@@ -77,19 +77,19 @@ source "$ZSH/oh-my-zsh.sh"
 bindkey '^R' history-incremental-search-backward
 
 #### THE PATH ###############################
-prependToPath "usr/local/bin:$PATH"
+prependToPath "usr/local/bin"
 
 # add cabal (haskell) bins
-prependToPath "$HOME/.cabal/bin:$PATH"
+prependToPath "$HOME/.cabal/bin"
 
 # add useful user scripts
-prependToPath "$HOME/code/scripts:$PATH"
+appendToPath "$HOME/scripts"
 
 # add anaconda path
-prependToPath "`find $HOME -maxdepth 3 -iregex '.*conda/bin'`:$PATH"
+prependToPath "`find $HOME -maxdepth 3 -iregex '.*conda/bin'`"
 
 # add cabal-sandbox path
-prependToPath "$HOME/.cabal-sandbox/bin:$PATH"
+prependToPath "$HOME/.cabal-sandbox/bin"
 
 #############################################
 
@@ -97,6 +97,9 @@ prependToPath "$HOME/.cabal-sandbox/bin:$PATH"
 if [[ `uname` == 'Darwin' ]]; then
   # For OSX
   [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+  if [[ `whoami` == 'n631802' ]]; then
+    appendToPath "/opt/ghc/ghc-7.8.4/bin"
+  fi
 fi
 
 if [[ `uname` == 'Linux' ]]; then
@@ -109,7 +112,7 @@ if [[ `uname` == 'Linux' ]]; then
     prependToPath "$HOME/vim-prefix/bin"
   else
     # for ubuntu ghc installs
-    prependToPath "/opt/local/bin:$PATH"
+    prependToPath "/opt/local/bin"
   fi
 fi
 #############################################

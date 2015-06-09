@@ -26,3 +26,5 @@
 	helper = cache --timeout=100000
 [push]
 	default = simple
+[core]
+	editor = /usr/local/bin/vim
