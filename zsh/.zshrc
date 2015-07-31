@@ -69,12 +69,12 @@ alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sand
 #############################################
 
 # plugins can be found in ~/.oh-my-zsh/plugins/
-plugins=(autojump pacman rbenv lein vi-mode colored-man)
-
-source "$ZSH/oh-my-zsh.sh"
+plugins=(autojump pacman rbenv lein cabal colored-man)
 
 # restore some shortcuts in vi-mode
 bindkey '^R' history-incremental-search-backward
+
+source "$ZSH/oh-my-zsh.sh"
 
 #### THE PATH ###############################
 prependToPath "usr/local/bin"
@@ -99,6 +99,9 @@ if [[ `uname` == 'Darwin' ]]; then
   [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
   if [[ `whoami` == 'n631802' ]]; then
     appendToPath "/opt/ghc/ghc-7.8.4/bin"
+    export ORACLE_HOME="$HOME/oracle/instantclient_11_2"
+    export LD_LIBRARY_PATH=$ORACLE_HOME
+    appendToPath "$ORACLE_HOME"
   fi
 fi
 
@@ -128,5 +131,3 @@ fi
 
 # clean out the path incase some platform nonesense happend
 export PATH="$(echo "$PATH" | sed 's#^:*##;s#::#:#g;s#/:#:#g')"
-
-

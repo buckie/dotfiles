@@ -1,4 +1,5 @@
 -- blue lambda prompt
-:set prompt "%s\ESC[34m \x03BB \ESC[m"
+:set prompt "\ESC[34m \x03BB \ESC[m"
+:set -XScopedTypeVariables
 :def hlint const . return $ ":! hlint \"src\""
 :def hoogle \s -> return $ ":! hoogle --count=15 \"" ++ s ++ "\""
