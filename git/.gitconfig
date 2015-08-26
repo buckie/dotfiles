@@ -1,38 +1,39 @@
 [alias]
-	st = status
-	ch = checkout
-	chm = checkout master
-	chb = checkout -b
+  st = status
+  ch = checkout
+  chm = checkout master
+  chb = checkout -b
   chd = checkout develop
-	br = branch
-	fap = fetch --all --prune
-	rbm = rebase master
-	rbd = rebase develop
-	csm = commit -sm
+  br = branch
+  fap = fetch --all --prune
+  rbm = rebase master
+  rbd = rebase develop
+  csm = commit -sm
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
   lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	mnff = merge --no-ff --no-edit
-	mffo = merge --ff-only
+  mnff = merge --no-ff --no-edit
+  mffo = merge --ff-only
   amend = commit --amend --no-edit
+  githubprofile = config user.email 'wjmartino@gmail.com'
+  workprofile = config user.email 'william.j.martino@jpmchase.com'
 [color]
-	ui = true
-        branch = auto
-        interactive = auto
-        status = auto
-        diff = auto
+  ui = true
+  branch = auto
+  interactive = auto
+  status = auto
+  diff = auto
 [user]
-	name = buckie
-	email = wjmartino@gmail.com
+  name = buckie
 [credential]
-	helper = cache --timeout=100000
+  helper = cache --timeout=100000
 [core]
-	editor = /usr/local/bin/vim
-	excludesfile = /Users/n631802/.gitignore_global
+  editor = /usr/local/bin/vim
+  excludesfile = /Users/n631802/.gitignore_global
 [push]
-	default = simple
+  default = simple
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true

@@ -98,9 +98,10 @@ if [[ `uname` == 'Darwin' ]]; then
   # For OSX
   [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
   if [[ `whoami` == 'n631802' ]]; then
-    appendToPath "/opt/ghc/ghc-7.8.4/bin"
+    appendToPath "/opt/ghc/ghc-7.10.2/bin"
     export ORACLE_HOME="$HOME/oracle/instantclient_11_2"
     export LD_LIBRARY_PATH=$ORACLE_HOME
+    export GOPATH="$HOME/gopath"
     appendToPath "$ORACLE_HOME"
   fi
 fi

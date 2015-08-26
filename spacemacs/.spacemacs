@@ -19,12 +19,12 @@
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
-     coq
+     xkcd
      emacs-lisp
      osx
      haskell
      python
-     ;; git
+     git
      markdown
      org
      ;; (shell :variables
@@ -190,7 +190,9 @@ layers configuration."
  '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values
    (quote
-    ((haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/record-resampler/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d" "dist/build/cbits/util.o")
+    ((haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/masala/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d")
+     (haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/deluge/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d")
+     (haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/record-resampler/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d" "dist/build/cbits/util.o")
      (haskell-process-type . ghci)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
