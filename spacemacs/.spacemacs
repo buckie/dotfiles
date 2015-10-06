@@ -170,7 +170,7 @@ layers configuration."
   (setq company-tooltip-limit 20)                      ; bigger popup window
   (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
   (setq company-echo-delay 0)                          ; remove annoying blinking
-  (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+  ;;(setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
   (global-hl-line-mode -1) ; Disable current line highlight
   (global-linum-mode) ; Show line numbers by default
 )
@@ -190,9 +190,7 @@ layers configuration."
  '(ring-bell-function (quote ignore) t)
  '(safe-local-variable-values
    (quote
-    ((haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/masala/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d")
-     (haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/deluge/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d")
-     (haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/record-resampler/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d" "dist/build/cbits/util.o")
+    ((haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/record-resampler/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d" "dist/build/cbits/util.o")
      (haskell-process-type . ghci)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
