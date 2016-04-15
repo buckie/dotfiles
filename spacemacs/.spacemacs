@@ -22,11 +22,15 @@
      xkcd
      emacs-lisp
      osx
-     haskell
+     (haskell :variables
+              haskell-process-type 'stack-ghci
+              haskell-enable-ghc-mod-support nil)
      python
      git
      markdown
+     latex
      org
+     spell-checking
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -164,8 +168,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (add-to-list 'exec-path "/opt/ghc/ghc-7.10.2/bin")
-  (add-to-list 'exec-path "/Users/n631802/.cabal/bin")
+  (add-to-list 'exec-path "/Users/n631802/.local/bin")
   (add-to-list 'exec-path "/Users/n631802/miniconda/bin")
   (setq company-tooltip-limit 20)                      ; bigger popup window
   (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
@@ -173,6 +176,9 @@ layers configuration."
   ;;(setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
   (global-hl-line-mode -1) ; Disable current line highlight
   (global-linum-mode) ; Show line numbers by default
+  (setq-default truncate-lines t)
+  (setq-default fill-column 120)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -187,11 +193,17 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(fill-column 120)
+ '(haskell-interactive-popup-errors nil)
  '(ring-bell-function (quote ignore) t)
- '(safe-local-variable-values
-   (quote
-    ((haskell-process-args-ghci "-ferror-spans" "-isrc" "-itests" "-O0" "-no-user-package-db" "-package-db" "/Users/n631802/repos/record-resampler/.cabal-sandbox/x86_64-osx-ghc-7.10.2-packages.conf.d" "dist/build/cbits/util.o")
-     (haskell-process-type . ghci)))))
+; '(safe-local-variable-values
+;   (quote
+;    ((haskell-process-use-ghci . t)
+;     (haskell-indent-spaces . 2)
+;     (haskell-process-args-ghci "ghci")
+;     (haskell-process-path-ghci . "stack")
+;     (haskell-process-type . stack-ghci))))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

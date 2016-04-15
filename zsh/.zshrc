@@ -62,12 +62,6 @@ alias la='ls -A'
 alias l='ls -CF'
 #############################################
 
-# Haskell Aliases ###########################
-alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
-alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
-alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
-#############################################
-
 # plugins can be found in ~/.oh-my-zsh/plugins/
 plugins=(autojump pacman rbenv lein cabal colored-man)
 
@@ -98,11 +92,16 @@ if [[ `uname` == 'Darwin' ]]; then
   # For OSX
   [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
   if [[ `whoami` == 'n631802' ]]; then
-    appendToPath "/opt/ghc/ghc-7.10.2/bin"
+    prependToPath "$HOME/.stack/snapshots/x86_64-osx/lts-4.0/7.10.3/bin"
+    prependToPath "$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
+    prependToPath "$HOME/.local/bin"
     export ORACLE_HOME="$HOME/oracle/instantclient_11_2"
     export LD_LIBRARY_PATH=$ORACLE_HOME
     export GOPATH="$HOME/gopath"
     appendToPath "$ORACLE_HOME"
+    alias grr="source /Users/n631802/scripts/grr.sh"
+    alias ghc="stack exec -- ghc"
+    alias ghci="stack ghci"
   fi
 fi
 
