@@ -114,6 +114,7 @@ if [[ `uname` == 'Linux' ]]; then
     # for CentOS & RHEL
     prependToPath "$HOME/vim-prefix/bin"
   else
+    prependToPath "$HOME/.local/bin"
     # for ubuntu ghc installs
     prependToPath "/opt/local/bin"
   fi
