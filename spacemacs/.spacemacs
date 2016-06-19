@@ -169,6 +169,7 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (add-to-list 'exec-path "/Users/n631802/.local/bin")
+  (add-to-list 'exec-path "/Users/wjm/.local/bin")
   (add-to-list 'exec-path "/Users/n631802/miniconda/bin")
   (setq company-tooltip-limit 20)                      ; bigger popup window
   (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
@@ -179,6 +180,14 @@ layers configuration."
   (setq-default truncate-lines t)
   (setq-default fill-column 120)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (defun beginning-of-line-or-indentation ()
+    "move to beginning of line, or indentation"
+    (interactive)
+    (if (bolp)
+        (back-to-indentation)
+      (beginning-of-line)))
+  (global-set-key (kbd "<home>") 'beginning-of-line-or-indentation)
+  (global-set-key (kbd "<end>") 'end-of-line)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
