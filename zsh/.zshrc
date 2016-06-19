@@ -2,6 +2,8 @@
 #
 #
 
+source $HOME/.tokens
+
 # Some Utility Functions
 checkPath () {
         case ":$PATH:" in
