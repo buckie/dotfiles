@@ -4,7 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 echo "==> copy dotfiles"
-stow --restow --target="$HOME" zsh tmux haskell git spacemacs
+stow --restow --target="$HOME" zsh tmux haskell git spacemacs vim
 
 echo "==> install oh-my-zsh"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then 

@@ -31,11 +31,14 @@
      latex
      org
      spell-checking
+     react
+     javascript
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      syntax-checking
      version-control
+     elm
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -204,15 +207,8 @@ layers configuration."
  '(ahs-inhibit-face-list nil)
  '(fill-column 120)
  '(haskell-interactive-popup-errors nil)
- '(ring-bell-function (quote ignore) t)
-; '(safe-local-variable-values
-;   (quote
-;    ((haskell-process-use-ghci . t)
-;     (haskell-indent-spaces . 2)
-;     (haskell-process-args-ghci "ghci")
-;     (haskell-process-path-ghci . "stack")
-;     (haskell-process-type . stack-ghci))))
- )
+ '(paradox-github-token t)
+ '(ring-bell-function (quote ignore) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

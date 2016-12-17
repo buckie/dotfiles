@@ -82,7 +82,7 @@ prependToPath "$HOME/.cabal/bin"
 appendToPath "$HOME/scripts"
 
 # add anaconda path
-prependToPath "`find $HOME -maxdepth 3 -iregex '.*conda/bin'`"
+prependToPath "$HOME/conda/bin"
 
 # add cabal-sandbox path
 prependToPath "$HOME/.cabal-sandbox/bin"
@@ -93,6 +93,16 @@ prependToPath "$HOME/.cabal-sandbox/bin"
 if [[ `uname` == 'Darwin' ]]; then
   # For OSX
   [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+  if [[ `whoami` == 'wjm' ]]; then
+    prependToPath "/Library/TeX/Root/bin/x86_64-darwin"
+    prependToPath "$HOME/.stack/snapshots/x86_64-osx/lts-4.0/7.10.3/bin"
+    prependToPath "$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
+    prependToPath "$HOME/.local/bin"
+    export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+    export GOPATH="$HOME/gopath"
+    alias ghc="stack exec -- ghc"
+    alias ghci="stack ghci"
+  fi
   if [[ `whoami` == 'n631802' ]]; then
     prependToPath "$HOME/.stack/snapshots/x86_64-osx/lts-4.0/7.10.3/bin"
     prependToPath "$HOME/.stack/programs/x86_64-osx/ghc-7.10.3/bin"
